@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Live 2026</title>
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MSN Live">
+    <link rel="icon" type="image/png" href="./imagem/icon-192.png">
+    <link rel="apple-touch-icon" href="./imagem/icon-192.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Fundo Estelar / Efeitos Nebula -->
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+
+        <div class="app-wrapper">
+            <form method="post" id="loginForm">
+
+                <button type="button" class="Btn-sair" id="btnSair" aria-label="Sair">
+                    <div class="sign">
+                        <svg viewBox="0 0 512 512" width="16" height="16">
+                            <path fill="currentColor"
+                                d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="text">SAIR</div>
+                </button>
+
+                <div class="header">
+                    <img src="img/logo.png" alt="Windows Live Logo">
+                </div>
+
+                <div class="caixa">
+                    <div class="avatar-wrapper">
+                        <div class="status-ring online" id="statusRing"></div>
+                        <div class="avatar-circle">
+                            <img src="img/icone.png" alt="Foto de Perfil" id="userPhoto">
+                        </div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <div class="nebula-input">
+                            <i class="fa-solid fa-envelope icon-neon"></i>
+                            <input required id="email" type="email" name="email" class="input" placeholder=" " autocomplete="email" />
+                            <label for="email" class="user-label">E-mail</label>
+                            <div class="nebula-particle" style="--x:0.2; --y:-0.4; --delay:0.1s"></div>
+                            <div class="nebula-particle" style="--x:0.5; --y:-0.2; --delay:0.3s"></div>
+                            <div class="nebula-particle" style="--x:0.3; --y:0.3; --delay:0.5s"></div>
+                            <div class="nebula-particle" style="--x:0.7; --y:0.1; --delay:0.2s"></div>
+                            <div class="nebula-particle" style="--x:0.1; --y:-0.7; --delay:0.4s"></div>
+                            <div class="nebula-particle" style="--x:0.6; --y:0.4; --delay:0.6s"></div>
+                        </div>
+
+                        <div class="nebula-input">
+                            <i class="fa-solid fa-lock icon-neon"></i>
+                            <input required id="password" type="password" name="password" class="input" placeholder=" " autocomplete="current-password" />
+                            <label for="password" class="user-label">Digite sua senha</label>
+                            <div class="nebula-particle" style="--x:0.2; --y:-0.4; --delay:0.1s"></div>
+                            <div class="nebula-particle" style="--x:0.5; --y:-0.2; --delay:0.3s"></div>
+                            <div class="nebula-particle" style="--x:0.3; --y:0.3; --delay:0.5s"></div>
+                            <div class="nebula-particle" style="--x:0.7; --y:0.1; --delay:0.2s"></div>
+                            <div class="nebula-particle" style="--x:0.1; --y:-0.7; --delay:0.4s"></div>
+                            <div class="nebula-particle" style="--x:0.6; --y:0.4; --delay:0.6s"></div>
+                        </div>
+                    </div>
+
+                    <div class="status-container">
+                        <span class="status-label">Entrar como:</span>
+
+                        <!-- Botão de Status Customizado -->
+                        <div class="custom-dropdown" id="dropdownBtn" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                            <span class="status-dot online" id="selectedDot"></span>
+                            <span id="selectedText">Disponível</span>
+                            <span class="arrow">▼</span>
+                        </div>
+
+                        <!-- Menu de Seleção de Status -->
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <div class="dropdown-item" data-value="online" data-color="#53cb03" data-text="Disponível">
+                                <span class="status-dot online"></span>
+                                <span>Disponível</span>
+                            </div>
+                            <div class="dropdown-item" data-value="busy" data-color="#ff3131" data-text="Ocupado">
+                                <span class="status-dot busy"></span>
+                                <span>Ocupado</span>
+                            </div>
+                            <div class="dropdown-item" data-value="away" data-color="#ffac33" data-text="Ausente">
+                                <span class="status-dot away"></span>
+                                <span>Ausente</span>
+                            </div>
+                            <div class="dropdown-item" data-value="invisible" data-color="#888888" data-text="Invisível">
+                                <span class="status-dot invisible"></span>
+                                <span>Invisível</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="options-container">
+                        <label>
+                            <input type="checkbox" name="lembrar"> Lembrar minha ID e senha
+                        </label>
+                        <label>
+                            <input type="checkbox" name="auto"> Entrar automaticamente
+                        </label>
+                    </div>
+
+                    <div class="recuperar-senha">
+                        <a href="#">Esqueceu sua senha?</a>
+                    </div>
+
+                    <div class="btn">
+                        <button type="submit" class="submit">ENTRAR</button>
+                        <button type="button" class="submit-cadastrar" id="btnCadastro">CRIAR CONTA</button>
+                    </div>
+                </div>
+            </form>
+
+            <p class="developer-credit">Desenvolvedor Alessandro-Mançano</p>
+        </div>
+
+        <!-- Overlay de Carregamento estilo MSN -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="msn-loader">
+                <div class="pawn pawn-blue"></div>
+                <div class="pawn pawn-green"></div>
+            </div>
+            <span style="font-weight: bold; letter-spacing: 1px;">Carregando...</span>
+        </div>
+
+        <!-- Redes Sociais -->
+        <ul class="example-2">
+            <li class="icon-content">
+                <a data-social="whatsapp" aria-label="Whatsapp" target="_blank" rel="noopener noreferrer"
+                    href="https://api.whatsapp.com/send?phone=+112067101079&amp;text=Save%20this%20to%20your%20Favorites%20-%20@wilsondesouza">
+                    <div class="filled"></div>
+                    <svg viewBox="0 0 24 24" class="bi bi-whatsapp" fill="currentColor" height="24" width="24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+                    </svg>
+                </a>
+                <div class="tooltip">WhatsApp</div>
+            </li>
+            <li class="icon-content">
+                <a data-social="facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/">
+                    <div class="filled"></div>
+                    <svg viewBox="0 0 24 24" class="bi bi-facebook" fill="currentColor" height="24" width="24">
+                        <path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"></path>
+                    </svg>
+                </a>
+                <div class="tooltip">Facebook</div>
+            </li>
+            <li class="icon-content">
+                <a data-social="instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/">
+                    <div class="filled"></div>
+                    <svg viewBox="0 0 16 16" class="bi bi-instagram" fill="currentColor" height="16" width="16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path>
+                    </svg>
+                </a>
+                <div class="tooltip">Instagram</div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

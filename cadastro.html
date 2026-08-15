@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Windows Live</title>
+
+    <!-- Configurações PWA e Manifesto -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MSN Live">
+
+    <!-- Ícones e Favicon -->
+    <link rel="icon" type="image/png" href="./imagem/icon-192.png">
+    <link rel="apple-touch-icon" href="./imagem/icon-192.png">
+
+    <!-- Estilos Externos e Locais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="cadastro.css">
+
+    <!-- Script carregado com defer -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Fundo Estelar / Efeitos Nebula -->
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+
+        <div class="app-wrapper">
+
+            <div class="header">
+                <img src="img/logo.png" alt="Windows Live Logo">
+            </div>
+
+            <form action="" method="post" id="cadastroForm">
+                <div class="caixa">
+
+                    <div class="input-wrapper">
+
+                        <div class="box-input">
+                            <div class="nebula-input">
+                                <i class="fa-solid fa-user"></i>
+                                <input required id="nome" type="text" name="nome" class="input" placeholder=" " autocomplete="given-name" />
+                                <label for="nome" class="user-label">Nome</label>
+                            </div>
+
+                            <div class="nebula-input">
+                                <i class="fa-solid fa-user"></i>
+                                <input required id="sobrenome" type="text" name="sobrenome" class="input" placeholder=" " autocomplete="family-name" />
+                                <label for="sobrenome" class="user-label">Sobrenome</label>
+                            </div>
+                        </div>
+
+                        <div class="nebula-input">
+                            <i class="fa-solid fa-envelope icon-neon"></i>
+                            <input required id="email" type="email" name="email" class="input" placeholder=" " autocomplete="email" />
+                            <label for="email" class="user-label">E-mail</label>
+                        </div>
+
+                        <div class="nebula-input">
+                            <i class="fa-solid fa-lock icon-neon"></i>
+                            <input required id="password" type="password" name="password" class="input" placeholder=" " autocomplete="new-password" />
+                            <label for="password" class="user-label">Digite sua senha</label>
+                        </div>
+
+                        <div class="nebula-input">
+                            <i class="fa-solid fa-lock icon-neon"></i>
+                            <input required id="confirmarpassword" type="password" name="confirmarpassword" class="input" placeholder=" " autocomplete="new-password" />
+                            <label for="confirmarpassword" class="user-label">Confirma senha</label>
+                        </div>
+
+                        <div class="box-input">
+                            <div class="nebula-input">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                                <input required id="tell" type="tel" name="tell" class="input" placeholder=" " autocomplete="tel" />
+                                <label for="tell" class="user-label">Telefone</label>
+                            </div>
+
+                            <div class="nebula-input">
+                                <i class="fa-solid fa-id-card"></i>
+                                <input required id="cpf" type="text" name="cpf" class="input" placeholder=" " autocomplete="off" />
+                                <label for="cpf" class="user-label">CPF</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="options-container">
+                        <div class="options-title">
+                            <i class="fa-solid fa-venus-mars"></i> Sexo
+                        </div>
+                        <label for="masc">
+                            <input type="radio" id="masc" name="sexo" value="masculino" required> Masculino
+                        </label>
+                        <label for="fem">
+                            <input type="radio" id="fem" name="sexo" value="feminino"> Feminino
+                        </label>
+                    </div>
+
+                    <div class="options-container">
+                        <label for="aceito">
+                            <input type="checkbox" id="aceito" name="aceito" required> Aceito os termos e condições...
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="btn">
+                    <button type="submit" class="button-cadastre" id="btnCadastrar">CADASTRAR-SE</button>
+                    <button type="button" class="button-voltar" onclick="window.location.href='index.html'">
+                        VOLTAR
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
