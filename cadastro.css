@@ -386,6 +386,7 @@ button:active {
     width: 100%;
     background: radial-gradient(ellipse at bottom, #000000 0%, #090a0f 100%);
     overflow: hidden;
+    padding: 20px;
 }
 
 #stars {
