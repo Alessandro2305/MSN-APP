@@ -248,8 +248,8 @@ h1 {
 }
 
 /* O "Check" dentro do quadrado de termos */
-.options-container input[type="checkbox"]:checked::after {
-    content: '✔';
+.options-container input[type="radio"]:checked::after {
+    content: '';
     font-size: 16px;
     color: white;
     position: absolute;
@@ -288,8 +288,10 @@ h1 {
     }
 }
 
-/* BOTAO */
 
+/* =========================================================
+   BOTÃO
+   ========================================================= */
 .btn {
     display: flex;
     width: 100%;
@@ -299,6 +301,9 @@ h1 {
     padding: 15px;
 }
 
+/* =========================================================
+   ENTRAR CADASTRE-SE
+   ========================================================= */
 .button-cadastre {
     height: 50px;
     margin: 5px;
@@ -308,20 +313,41 @@ h1 {
     justify-content: center;
     font-weight: 600;
     align-items: center;
-    font-family: Consolas, Courier New, monospace;
     border: solid #5bff4c 1px;
-    font-size: 18px;
+    font-size: 15px;
     color: rgb(161, 161, 161);
     -webkit-transition: 500ms;
     transition: 500ms;
     border-radius: 5px;
     background: linear-gradient(145deg, #2a9946, #0e6f2b);
-    box-shadow: inset 25px 25px 50px #000802;
+    box-shadow:inset 25px 25px 50px #000802;
+}
+
+.button-cadastre {
+    border: 1px solid #5bff4c;
+    color: #d0d0d0;
+    background:
+        linear-gradient(
+            145deg,
+            #2a9946,
+            #0e6f2b
+        );
+    box-shadow:
+        inset 15px 15px 30px #000802;
+}
+
+.button-cadastre:hover {
+    border-color: #96ff7c;
+    color: #fff;
+    box-shadow:
+        0 0 12px rgba(83, 203, 3, 0.5),
+        inset 15px 15px 30px #000802;
 }
 
 
-
-/* BOTAO VOLTAR */
+/* =========================================================
+   BOTÃO VOLTAR
+   ========================================================= */
 
 .button-voltar {
     height: 50px;
@@ -332,35 +358,41 @@ h1 {
     justify-content: center;
     font-weight: 600;
     align-items: center;
-    font-family: Consolas, Courier New, monospace;
     border: solid #4cfff6 1px;
-    font-size: 18px;
+    font-size: 15px;
     color: rgb(161, 161, 161);
     -webkit-transition: 500ms;
     transition: 500ms;
     border-radius: 5px;
     background: linear-gradient(145deg, #2a8c99, #0e646f);
-    box-shadow: inset 25px 25px 50px #000802;
+    box-shadow:inset 25px 25px 50px #000802;
 }
 
-button:hover {
-    -webkit-box-shadow: 1px 1px 13px #b8b8b8,
-        -1px -1px 13px #f7f7f7;
-    box-shadow: 1px 1px 13px #b2b2b3,
-        -1px -1px 13px #a0a1a1;
-    color: #d6d6d6;
-    -webkit-transition: 500ms;
-    transition: 500ms;
+.button-voltar:hover {
+    border-color: #ff1e1e;
+    color: #fff;
+    box-shadow:
+        0 0 12px rgba(203, 3, 3, 0.5),
+        inset 15px 15px 30px #000802;
+          background:
+        linear-gradient(
+            145deg,
+            #992a2a,
+            #6f0e0e
+        );
 }
 
-button:active {
-    -webkit-box-shadow: 1px 1px 13px #cccccc,
-        -1px -1px 33px #ffffff;
-    box-shadow: 1px 1px 13px #b6b6b6,
-        -1px -1px 33px #ffffff;
-    color: #d6d6d6;
-    -webkit-transition: 100ms;
-    transition: 100ms;
+.button-voltar:active {
+    border: 1px solid #ff4c4c;
+    color: #d0d0d0;
+    background:
+        linear-gradient(
+            145deg,
+            #992a2a,
+            #6f0e0e
+        );
+    box-shadow:
+        inset 15px 15px 30px #000802;
 }
 
 
